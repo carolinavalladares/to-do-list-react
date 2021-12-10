@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <h2>To-Do List</h2>
       <TodoForm todos={todos} setTodos={setTodos} />
-      <TodoList />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };

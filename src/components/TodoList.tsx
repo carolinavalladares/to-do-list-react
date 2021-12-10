@@ -1,7 +1,30 @@
 import React from "react";
 
-const TodoList = () => {
-  return <ul></ul>;
+import TodoItem from "./TodoItem";
+
+interface ITodo {
+  text: string;
+  id: number;
+}
+
+interface Props {
+  todos: ITodo[];
+  setTodos: React.Dispatch<React.SetStateAction<ITodo[]>>;
+}
+
+const TodoList = (props: Props) => {
+  return (
+    <ul>
+      {props.todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          setTodos={props.setTodos}
+          todos={props.todos}
+        />
+      ))}
+    </ul>
+  );
 };
 
 export default TodoList;

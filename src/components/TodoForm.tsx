@@ -10,7 +10,7 @@ interface Props {
   setTodos: React.Dispatch<React.SetStateAction<ITodo[]>>;
 }
 
-const TodoForm = (Props: Props) => {
+const TodoForm = (props: Props) => {
   const [text, setText] = useState("");
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,8 +19,8 @@ const TodoForm = (Props: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    Props.setTodos([
-      ...Props.todos,
+    props.setTodos([
+      ...props.todos,
       {
         text: text,
         id: Math.random(),
