@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface ITodo {
   text: string;
   id: number;
+  complete: boolean;
 }
 
 interface Props {
@@ -12,8 +13,6 @@ interface Props {
 }
 
 const TodoItem = (props: Props) => {
-  const [done, setDone] = useState(false);
-
   const handleDelete = () => {
     props.setTodos(
       props.todos.filter((item) => {
@@ -23,16 +22,31 @@ const TodoItem = (props: Props) => {
   };
 
   const toggleDone = () => {
-    setDone(!done);
+    props.setTodos(
+      props.todos.map((item) => {
+        if (item.id === props.todo.id) {
+          return {
+            ...item,
+            complete: !item.complete,
+          };
+        } else {
+          return item;
+        }
+      })
+    );
   };
 
   return (
-    <li className={`todo-list__item ${done ? "done" : ""}`}>
-      <p className={`todo-list__item-text ${done ? "done" : ""}`}>
+    <li className={`todo-list__item ${props.todo.complete ? "done" : ""}`}>
+      <p
+        className={`todo-list__item-text ${props.todo.complete ? "done" : ""}`}
+      >
         {props.todo.text}
       </p>
       <button
-        className={`todo-list__item-check-btn ${done ? "done" : ""}`}
+        className={`todo-list__item-check-btn ${
+          props.todo.complete ? "done" : ""
+        }`}
         onClick={toggleDone}
         title="check"
       >

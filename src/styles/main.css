@@ -23,11 +23,15 @@ body {
 
 .todo-list__form {
   background-color: #292929;
-  display: flex;
-  justify-content: center;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 25px;
+}
+
+.todo-list__form-input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 .todo-list__form input {
   border: 0;
@@ -62,6 +66,22 @@ body {
 
 .todo-list__form button:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.todo-list__form-filter {
+  outline: 0;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #292929;
+  color: white;
 }
 
 .todo-list__list {
