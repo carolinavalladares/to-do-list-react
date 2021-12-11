@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  height: 100vh;
+}
+
+.todo-list__wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-list__title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.todo-list__form {
+  background-color: #292929;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+.todo-list__form input {
+  border: 0;
+  margin: 0 8px 0 0;
+  outline: 0;
+  padding: 5px;
+  flex: 1;
+  max-width: 250px;
+  height: 25px;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+}
+
+.todo-list__form button {
+  border: 0;
+  border-radius: 5px;
+  margin: 0;
+  outline: 0;
+  height: 25px;
+  width: 25px;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-list__form button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.todo-list__list {
+  list-style: none;
+}
+
+.todo-list__item {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.todo-list__item.done {
+  border-color: green;
+}
+
+.todo-list__item-text {
+  flex: 1;
+  font-size: 18px;
+}
+
+.todo-list__item-text.done {
+  text-decoration: line-through;
+}
+
+.todo-list__item-check-btn,
+.todo-list__item-delete-btn {
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.todo-list__item-check-btn {
+  margin-right: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: green;
+}
+
+.todo-list__item-check-btn:hover {
+  border: 2px solid green;
+}
+
+.todo-list__item-check-btn.done {
+  background-color: green;
+  color: white;
+}
+
+.todo-list__item-delete-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list__item-delete-btn::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 2px;
+  background-color: tomato;
+}
+
+.todo-list__item-delete-btn:hover {
+  background-color: tomato;
+}
+
+.todo-list__item-delete-btn:hover::after {
+  background-color: white;
+}

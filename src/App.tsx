@@ -11,8 +11,8 @@ interface ITodo {
 const App = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
   return (
-    <div>
-      <h2>To-Do List</h2>
+    <div className="todo-list__wrapper">
+      <h2 className="todo-list__title">To-Do List</h2>
       <TodoForm todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
     </div>

@@ -14,7 +14,7 @@ interface Props {
 
 const TodoList = (props: Props) => {
   return (
-    <ul>
+    <ul className="todo-list__list">
       {props.todos.map((todo) => (
         <TodoItem
           key={todo.id}

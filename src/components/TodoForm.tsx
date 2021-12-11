@@ -19,21 +19,25 @@ const TodoForm = (props: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.setTodos([
-      ...props.todos,
-      {
-        text: text,
-        id: Math.random(),
-      },
-    ]);
+    if (text !== "") {
+      props.setTodos([
+        ...props.todos,
+        {
+          text: text,
+          id: Math.random(),
+        },
+      ]);
 
-    setText("");
+      setText("");
+    } else {
+      alert("Nothing to submit... Please enter a to-do.");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todo-list__form">
       <input value={text} onChange={handleInput} type="text" />
-      <button>+</button>
+      <button title="add">+</button>
     </form>
   );
 };
